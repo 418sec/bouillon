@@ -141,6 +141,8 @@ export default class Bouillion {
 
       if (_store == undefined) throw new Error('Creation of only 1 new key per set operation is supported');
 
+      if (_store === Object.prototype) throw new Error('Setting property to object prototype is not allowed');
+
       _store[last] = value;
 
     }
